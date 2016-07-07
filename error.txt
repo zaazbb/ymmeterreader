@@ -1,0 +1,236 @@
+Traceback (most recent call last):
+  File "D:\work\repository\ymmeterreader\mainwindow.py", line 47, in update
+    if self.ser.in_waiting:
+AttributeError: 'NoneType' object has no attribute 'in_waiting'
+Traceback (most recent call last):
+  File "D:\work\repository\ymmeterreader\mainwindow.py", line 47, in update
+    if self.ser.in_waiting:
+AttributeError: 'NoneType' object has no attribute 'in_waiting'
+Traceback (most recent call last):
+  File "D:\work\repository\ymmeterreader\mainwindow.py", line 47, in update
+    if self.ser.in_waiting:
+AttributeError: 'NoneType' object has no attribute 'in_waiting'
+Traceback (most recent call last):
+  File "D:\work\repository\ymmeterreader\mainwindow.py", line 47, in update
+    if self.ser.in_waiting:
+AttributeError: 'NoneType' object has no attribute 'in_waiting'
+Traceback (most recent call last):
+  File "D:\work\repository\ymmeterreader\mainwindow.py", line 47, in update
+    if self.ser.in_waiting:
+AttributeError: 'NoneType' object has no attribute 'in_waiting'
+Traceback (most recent call last):
+  File "D:\work\repository\ymmeterreader\mainwindow.py", line 47, in update
+    if self.ser.in_waiting:
+AttributeError: 'NoneType' object has no attribute 'in_waiting'
+Traceback (most recent call last):
+  File "D:\work\repository\ymmeterreader\mainwindow.py", line 47, in update
+    if self.ser.in_waiting:
+AttributeError: 'NoneType' object has no attribute 'in_waiting'
+Traceback (most recent call last):
+  File "D:\work\repository\ymmeterreader\mainwindow.py", line 47, in update
+    if self.ser.in_waiting:
+AttributeError: 'NoneType' object has no attribute 'in_waiting'
+Traceback (most recent call last):
+  File "D:\work\repository\ymmeterreader\mainwindow.py", line 47, in update
+    if self.ser.in_waiting:
+AttributeError: 'NoneType' object has no attribute 'in_waiting'
+Traceback (most recent call last):
+  File "D:\work\repository\ymmeterreader\mainwindow.py", line 47, in update
+    if self.ser.in_waiting:
+AttributeError: 'NoneType' object has no attribute 'in_waiting'
+Traceback (most recent call last):
+  File "D:\work\repository\ymmeterreader\mainwindow.py", line 47, in update
+    if self.ser.in_waiting:
+AttributeError: 'NoneType' object has no attribute 'in_waiting'
+Traceback (most recent call last):
+  File "D:\work\repository\ymmeterreader\mainwindow.py", line 47, in update
+    if self.ser.in_waiting:
+AttributeError: 'NoneType' object has no attribute 'in_waiting'
+Traceback (most recent call last):
+  File "D:\work\repository\ymmeterreader\mainwindow.py", line 47, in update
+    if self.ser.in_waiting:
+AttributeError: 'NoneType' object has no attribute 'in_waiting'
+Traceback (most recent call last):
+  File "D:\work\repository\ymmeterreader\mainwindow.py", line 47, in update
+    if self.ser.in_waiting:
+AttributeError: 'NoneType' object has no attribute 'in_waiting'
+Traceback (most recent call last):
+  File "D:\work\repository\ymmeterreader\mainwindow.py", line 47, in update
+    if self.ser.in_waiting:
+AttributeError: 'NoneType' object has no attribute 'in_waiting'
+Traceback (most recent call last):
+  File "D:\work\repository\ymmeterreader\mainwindow.py", line 47, in update
+    if self.ser.in_waiting:
+AttributeError: 'NoneType' object has no attribute 'in_waiting'
+Traceback (most recent call last):
+  File "D:\work\repository\ymmeterreader\mainwindow.py", line 47, in update
+    if self.ser.in_waiting:
+AttributeError: 'NoneType' object has no attribute 'in_waiting'
+Traceback (most recent call last):
+  File "D:\work\repository\ymmeterreader\mainwindow.py", line 47, in update
+    if self.ser.in_waiting:
+AttributeError: 'NoneType' object has no attribute 'in_waiting'
+Traceback (most recent call last):
+  File "D:\work\repository\ymmeterreader\mainwindow.py", line 47, in update
+    if self.ser.in_waiting:
+AttributeError: 'NoneType' object has no attribute 'in_waiting'
+Traceback (most recent call last):
+  File "D:\work\repository\ymmeterreader\mainwindow.py", line 47, in update
+    if self.ser.in_waiting:
+AttributeError: 'NoneType' object has no attribute 'in_waiting'
+Traceback (most recent call last):
+  File "D:\work\repository\ymmeterreader\mainwindow.py", line 47, in update
+    if self.ser.in_waiting:
+AttributeError: 'NoneType' object has no attribute 'in_waiting'
+Traceback (most recent call last):
+  File "D:\work\repository\ymmeterreader\mainwindow.py", line 47, in update
+    if self.ser.in_waiting:
+AttributeError: 'NoneType' object has no attribute 'in_waiting'
+Traceback (most recent call last):
+  File "D:\work\repository\ymmeterreader\mainwindow.py", line 47, in update
+    if self.ser.in_waiting:
+AttributeError: 'NoneType' object has no attribute 'in_waiting'
+Traceback (most recent call last):
+  File "D:\work\repository\ymmeterreader\mainwindow.py", line 47, in update
+    if self.ser.in_waiting:
+AttributeError: 'NoneType' object has no attribute 'in_waiting'
+Traceback (most recent call last):
+  File "D:\work\repository\ymmeterreader\mainwindow.py", line 47, in update
+    if self.ser.in_waiting:
+AttributeError: 'NoneType' object has no attribute 'in_waiting'
+Traceback (most recent call last):
+  File "D:\work\repository\ymmeterreader\mainwindow.py", line 47, in update
+    if self.ser.in_waiting:
+AttributeError: 'NoneType' object has no attribute 'in_waiting'
+Traceback (most recent call last):
+  File "D:\work\repository\ymmeterreader\mainwindow.py", line 47, in update
+    if self.ser.in_waiting:
+AttributeError: 'NoneType' object has no attribute 'in_waiting'
+Traceback (most recent call last):
+  File "D:\work\repository\ymmeterreader\mainwindow.py", line 47, in update
+    if self.ser.in_waiting:
+AttributeError: 'NoneType' object has no attribute 'in_waiting'
+Traceback (most recent call last):
+  File "D:\work\repository\ymmeterreader\mainwindow.py", line 47, in update
+    if self.ser.in_waiting:
+AttributeError: 'NoneType' object has no attribute 'in_waiting'
+Traceback (most recent call last):
+  File "D:\work\repository\ymmeterreader\mainwindow.py", line 47, in update
+    if self.ser.in_waiting:
+AttributeError: 'NoneType' object has no attribute 'in_waiting'
+Traceback (most recent call last):
+  File "D:\work\repository\ymmeterreader\mainwindow.py", line 47, in update
+    if self.ser.in_waiting:
+AttributeError: 'NoneType' object has no attribute 'in_waiting'
+Traceback (most recent call last):
+  File "D:\work\repository\ymmeterreader\mainwindow.py", line 47, in update
+    if self.ser.in_waiting:
+AttributeError: 'NoneType' object has no attribute 'in_waiting'
+Traceback (most recent call last):
+  File "D:\work\repository\ymmeterreader\mainwindow.py", line 47, in update
+    if self.ser.in_waiting:
+AttributeError: 'NoneType' object has no attribute 'in_waiting'
+Traceback (most recent call last):
+  File "D:\work\repository\ymmeterreader\mainwindow.py", line 47, in update
+    if self.ser.in_waiting:
+AttributeError: 'NoneType' object has no attribute 'in_waiting'
+Traceback (most recent call last):
+  File "D:\work\repository\ymmeterreader\mainwindow.py", line 47, in update
+    if self.ser.in_waiting:
+AttributeError: 'NoneType' object has no attribute 'in_waiting'
+Traceback (most recent call last):
+  File "D:\work\repository\ymmeterreader\mainwindow.py", line 47, in update
+    if self.ser.in_waiting:
+AttributeError: 'NoneType' object has no attribute 'in_waiting'
+Traceback (most recent call last):
+  File "D:\work\repository\ymmeterreader\mainwindow.py", line 47, in update
+    if self.ser.in_waiting:
+AttributeError: 'NoneType' object has no attribute 'in_waiting'
+Traceback (most recent call last):
+  File "D:\work\repository\ymmeterreader\mainwindow.py", line 47, in update
+    if self.ser.in_waiting:
+AttributeError: 'NoneType' object has no attribute 'in_waiting'
+Traceback (most recent call last):
+  File "D:\work\repository\ymmeterreader\mainwindow.py", line 47, in update
+    if self.ser.in_waiting:
+AttributeError: 'NoneType' object has no attribute 'in_waiting'
+Traceback (most recent call last):
+  File "D:\work\repository\ymmeterreader\mainwindow.py", line 47, in update
+    if self.ser.in_waiting:
+AttributeError: 'NoneType' object has no attribute 'in_waiting'
+Traceback (most recent call last):
+  File "D:\work\repository\ymmeterreader\mainwindow.py", line 47, in update
+    if self.ser.in_waiting:
+AttributeError: 'NoneType' object has no attribute 'in_waiting'
+Traceback (most recent call last):
+  File "D:\work\repository\ymmeterreader\mainwindow.py", line 47, in update
+    if self.ser.in_waiting:
+AttributeError: 'NoneType' object has no attribute 'in_waiting'
+Traceback (most recent call last):
+  File "D:\work\repository\ymmeterreader\mainwindow.py", line 47, in update
+    if self.ser.in_waiting:
+AttributeError: 'NoneType' object has no attribute 'in_waiting'
+Traceback (most recent call last):
+  File "D:\work\repository\ymmeterreader\mainwindow.py", line 47, in update
+    if self.ser.in_waiting:
+AttributeError: 'NoneType' object has no attribute 'in_waiting'
+Traceback (most recent call last):
+  File "D:\work\repository\ymmeterreader\mainwindow.py", line 47, in update
+    if self.ser.in_waiting:
+AttributeError: 'NoneType' object has no attribute 'in_waiting'
+Traceback (most recent call last):
+  File "D:\work\repository\ymmeterreader\mainwindow.py", line 47, in update
+    if self.ser.in_waiting:
+AttributeError: 'NoneType' object has no attribute 'in_waiting'
+Traceback (most recent call last):
+  File "D:\work\repository\ymmeterreader\mainwindow.py", line 47, in update
+    if self.ser.in_waiting:
+AttributeError: 'NoneType' object has no attribute 'in_waiting'
+Traceback (most recent call last):
+  File "D:\work\repository\ymmeterreader\mainwindow.py", line 47, in update
+    if self.ser.in_waiting:
+AttributeError: 'NoneType' object has no attribute 'in_waiting'
+Traceback (most recent call last):
+  File "D:\work\repository\ymmeterreader\mainwindow.py", line 47, in update
+    if self.ser.in_waiting:
+AttributeError: 'NoneType' object has no attribute 'in_waiting'
+Traceback (most recent call last):
+  File "D:\work\repository\ymmeterreader\mainwindow.py", line 47, in update
+    if self.ser.in_waiting:
+AttributeError: 'NoneType' object has no attribute 'in_waiting'
+Traceback (most recent call last):
+  File "D:\work\repository\ymmeterreader\mainwindow.py", line 47, in update
+    if self.ser.in_waiting:
+AttributeError: 'NoneType' object has no attribute 'in_waiting'
+Traceback (most recent call last):
+  File "D:\work\repository\ymmeterreader\mainwindow.py", line 47, in update
+    if self.ser.in_waiting:
+AttributeError: 'NoneType' object has no attribute 'in_waiting'
+Traceback (most recent call last):
+  File "D:\work\repository\ymmeterreader\mainwindow.py", line 47, in update
+    if self.ser.in_waiting:
+AttributeError: 'NoneType' object has no attribute 'in_waiting'
+Traceback (most recent call last):
+  File "D:\work\repository\ymmeterreader\mainwindow.py", line 47, in update
+    if self.ser.in_waiting:
+AttributeError: 'NoneType' object has no attribute 'in_waiting'
+Traceback (most recent call last):
+  File "D:\work\repository\ymmeterreader\mainwindow.py", line 47, in update
+    if self.ser.in_waiting:
+AttributeError: 'NoneType' object has no attribute 'in_waiting'
+Traceback (most recent call last):
+  File "D:\work\repository\ymmeterreader\mainwindow.py", line 47, in update
+    if self.ser.in_waiting:
+AttributeError: 'NoneType' object has no attribute 'in_waiting'
+Traceback (most recent call last):
+  File "D:\work\repository\ymmeterreader\mainwindow.py", line 47, in update
+    if self.ser.in_waiting:
+AttributeError: 'NoneType' object has no attribute 'in_waiting'
+Traceback (most recent call last):
+  File "D:\work\repository\ymmeterreader\mainwindow.py", line 47, in update
+    if self.ser.in_waiting:
+AttributeError: 'NoneType' object has no attribute 'in_waiting'
+Traceback (most recent call last):
+  File "D:\work\repository\ymmeterreader\mainwindow.py", line 47, in update
+    if self.ser.in_waiting:
+AttributeError: 'NoneType' object has no attribute 'in_waiting'
