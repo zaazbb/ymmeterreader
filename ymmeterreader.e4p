@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Project SYSTEM "Project-5.1.dtd">
-<!-- eric project file for project YM001NetworkAnalyzer -->
-<!-- Saved: 2016-06-25, 13:33:52 -->
+<!-- eric project file for project ymmeterreader -->
+<!-- Saved: 2016-07-08, 13:13:55 -->
 <!-- Copyright (C) 2016 ,  -->
 <Project version="5.1">
   <Language>en_US</Language>
@@ -16,13 +16,9 @@
   <Sources>
     <Source>Ui_mainwindow.py</Source>
     <Source>__init__.py</Source>
-    <Source>config.py</Source>
     <Source>main.py</Source>
     <Source>mainwindow.py</Source>
     <Source>packet.py</Source>
-    <Source>rdebug.py</Source>
-    <Source>upgrade.py</Source>
-    <Source>worker.py</Source>
   </Sources>
   <Forms>
     <Form>mainwindow.ui</Form>

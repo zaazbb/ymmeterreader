@@ -82,7 +82,8 @@ ApsTsmtPower = {0:'16dBm', 1:'10dBm', 2:'4dBm', 3:'-2dBm'}
 
 def reverse_hex(addr):
     addr.reverse()
-    return addr.hex().upper()
+    #return addr.hex().upper()
+    return ''.join(['%02X'%i for i in addr])
     
 def bitrate(dat, bitn):
     bits = 0
@@ -262,7 +263,8 @@ def PacketParser(pkt):
                     cmdinfo['upgRate'] = '??'
                 else:
                     cmdinfo['upgRate'] = bitrate(pkt[i:i+64], n)
-                cmdinfo['bpFlag'] = pkt[i:i+64].hex().upper()
+                #cmdinfo['bpFlag'] = pkt[i:i+64].hex().upper()
+                cmdinfo['bpFlag'] = ''.join(['%02X'%i for i in pkt[i:i+64]])
             else:
                 baseinfo[0] = 'mcUpg???'
         elif pkt[i] == 0xF1:
@@ -437,7 +439,8 @@ def PacketParser(pkt):
                 elif pkt[i] == 6:
                     # softUpgrade
                     i += 1
-                    cmdinfo['vendId'] = pkt[i:i+2].hex().upper()
+                    #cmdinfo['vendId'] = pkt[i:i+2].hex().upper()
+                    cmdinfo['vendId'] = ''.join(['%02X'%i for i in pkt[i:i+2]])
                     i += 2
                     cmdinfo['devType'] = str(pkt[i])
                     i += 1
