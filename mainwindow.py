@@ -23,14 +23,23 @@ class MainWindow(QMainWindow):
         self.ui.setupUi(self)
 
         self.meters = []
+        self.meteritems = []
         with open('meters.txt') as f:
             for line in f:
-                rawmeter = line.strip()
-                if rawmeter:
-                    meter = rawmeter[:12].zfill(12)
-                    self.meters.append(meter)
-                    self.ui.treeWidget.addTopLevelItem(
-                        QTreeWidgetItem(None, [meter, '']))
+                line = line.strip()
+                if line.startswith('#') or not line:
+                    continue
+                minfo = line.split()
+                # addr.
+                minfo[2] = minfo[2][:12].zfill(12)
+                self.meters.append(minfo[2])
+                item = QTreeWidgetItem(None, minfo)
+                self.ui.treeWidget.addTopLevelItem(item)
+                self.meteritems.append(item)
+        self.ui.treeWidget.resizeColumnToContents(0)
+        self.ui.treeWidget.resizeColumnToContents(1)
+        self.ui.treeWidget.resizeColumnToContents(2)
+        self.ui.progressBar.setMaximum(len(self.meters))
         
         self.ui.comboBox_port.addItems([i[0] for i in comports()])
         
@@ -43,8 +52,40 @@ class MainWindow(QMainWindow):
         self.buf = bytearray()
         self.pktidx = [0]
         self.dstmeters = self.meters
+#        self.rxd = 0
+#        self.binfo = ['aRoute', 0, 0, 0, self.ui.lineEdit_localaddr.text(), '']
+#        self.xinfo = {'data': '68 77 44 10 03 00 00 68 91 18 33 32 34 33 AC 34 33 33 58 33 33 33 95 33 33 33 99 33 33 33 58 33 33 33 9B 16'}
         
     def update(self):
+#        if self.rxd:
+#            self.rxd = 0
+#            baseinfo = self.binfo
+#            extinfo = self.xinfo
+#            if baseinfo[4] == self.ui.lineEdit_localaddr.text().strip() and baseinfo[0] == 'aRoute':
+#                item = self.ui.treeWidget.topLevelItem(self.meters.index(baseinfo[5]))
+#                item.setText(8, extinfo['data'])
+#                d = [i-0x33 for i in bytes.fromhex(extinfo['data'])[14:-2]]
+#                for i in range(0, 20 if len(d)>20 else len(d), 4):
+#                    item.setText(3+i//4, '%02X%02X%02X.%02X' % (d[i+3], d[i+2], d[i+1], d[i]))
+#                for i in range(3, item.columnCount()):
+#                    self.ui.treeWidget.resizeColumnToContents(i)
+#                if self.ui.pushButton_start.text() == '停止抄表' and item is self.meteritems[self.i]:
+#                    self.meteritems.remove(item)
+#                    item.setBackground(2, Qt.green)
+#                    oks = len(self.meters)-len(self.meteritems)
+#                    self.ui.progressBar.setValue(oks)
+#                    okrate = oks*100//len(self.meters)
+#                    self.ui.label_currate.setText('%d' % okrate)
+#                    if not self.meteritems or okrate == self.ui.spinBox_okrate.value():
+#                        self.txtimer.stop()
+#                        self.ui.pushButton_start.setText('开始抄表')
+#                        self.ui.label_curmeter.setText('------------')
+#                        self.ui.label_retry.setText('0')
+#                    else:
+#                        #self.retry = self.ui.spinBox_retry.value()
+#                        self.retry = 0
+#                        self.txtimer.start(0)
+#            return
         if serial.VERSION == '2.7':
             inwaiting = self.ser.inWaiting()
         else:
@@ -62,11 +103,29 @@ class MainWindow(QMainWindow):
                         #print(baseinfo)
                         #print(extinfo)
                         if baseinfo[4] == self.ui.lineEdit_localaddr.text().strip() and baseinfo[0] == 'aRoute':
-                            self.ui.treeWidget.topLevelItem(self.meters.index(baseinfo[5])).setText(1, extinfo['data'])
-                            if self.ui.pushButton_start.text() == '停止抄表' and baseinfo[5] == self.dstmeters[self.i]:
-                                self.retry = self.ui.spinBox_retry.value()
-                                self.ui.progressBar.setValue(self.i*3+self.retry)
-                                self.txtimer.start(0)
+                            item = self.ui.treeWidget.topLevelItem(self.meters.index(baseinfo[5]))
+                            item.setText(8, extinfo['data'])
+                            d = [i-0x33 for i in bytes.fromhex(extinfo['data'])[14:-2]]
+                            for i in range(0, 20 if len(d)>20 else len(d), 4):
+                                item.setText(3+i//4, '%02X%02X%02X.%02X' % (d[i+3], d[i+2], d[i+1], d[i]))
+                            for i in range(3, item.columnCount()):
+                                self.ui.treeWidget.resizeColumnToContents(i)
+                            if self.ui.pushButton_start.text() == '停止抄表' and item is self.meteritems[self.i]:
+                                self.meteritems.remove(item)
+                                item.setBackground(2, Qt.green)
+                                oks = len(self.meters)-len(self.meteritems)
+                                self.ui.progressBar.setValue(oks)
+                                okrate = oks*100//len(self.meters)
+                                self.ui.label_currate.setText('%d' % okrate)
+                                if not self.meteritems or okrate == self.ui.spinBox_okrate.value():
+                                    self.txtimer.stop()
+                                    self.ui.pushButton_start.setText('开始抄表')
+                                    self.ui.label_curmeter.setText('------------')
+                                    self.ui.label_retry.setText('0')
+                                else:
+                                    #self.retry = self.ui.spinBox_retry.value()
+                                    self.retry = 0
+                                    self.txtimer.start(0)
                     except:
                         pass
                     del self.buf[: i+self.buf[i+4]+5+2]
@@ -75,24 +134,28 @@ class MainWindow(QMainWindow):
         if self.retry == self.ui.spinBox_retry.value():
             self.retry = 0
             self.i += 1
-            if self.i == len(self.dstmeters):
-                self.ui.pushButton_start.setText('开始抄表')
-                self.ui.label_curmeter.setText('------------')
-                self.ui.label_retry.setText('0')
-                return
-        meter = self.dstmeters[self.i]
-        if self.ui.checkBox_nodata.isChecked() and \
-                self.ui.treeWidget.topLevelItem(self.meters.index(meter)).text(1):
-            self.retry = self.ui.spinBox_retry.value()
-            self.ui.progressBar.setValue(self.i*3+self.retry)
-            self.txtimer.start(0)
-            return
+            if self.i == len(self.meteritems):
+                self.i = 0
+                self.round += 1
+                self.ui.label_curround.setText(str(self.round))
+                if self.round == self.ui.spinBox_round.value():
+                    self.ui.pushButton_start.setText('开始抄表')
+                    self.ui.label_curmeter.setText('------------')
+                    self.ui.label_retry.setText('0')
+                    return
+        item = self.meteritems[self.i]
+        self.ui.treeWidget.setCurrentItem(item)
+        #item.setBackground(2, Qt.cyan)
+        meter = item.text(2)
         self.read_meter(meter)
         self.ui.label_curmeter.setText(meter)
         self.retry += 1
         self.ui.label_retry.setText(str(self.retry))
-        self.ui.progressBar.setValue(self.i*3+self.retry)
         self.txtimer.start(self.ui.spinBox_interval.value() * 1000) 
+#        if 1:#self.retry == self.ui.spinBox_retry.value():
+#            if meter in ['000000000002']:
+#                self.rxd=1
+#                self.binfo[5] = meter
  
     def read_meter(self, meter):
         dstaddr = bytearray.fromhex(meter)
@@ -142,16 +205,15 @@ class MainWindow(QMainWindow):
     @pyqtSlot()
     def on_pushButton_start_clicked(self):
         if self.ui.pushButton_start.text() == '开始抄表':
-            if self.ui.checkBox_selorall.isChecked():
-                items = self.ui.treeWidget.selectedItems()
-                if items:
-                    self.dstmeters = [i.text(0) for i in items]
-            else:
-                self.dstmeters = self.meters
-            self.ui.progressBar.setMaximum(len(self.dstmeters)*self.ui.spinBox_retry.value())
+            if int(self.ui.label_currate.text()) == self.ui.spinBox_okrate.value() or not self.meteritems:
+                QMessageBox.information(self, '提示', '条件已满足,你可以重启软件来重新抄表!')
+                return
             if self.ser:
                 self.i = 0
                 self.retry = 0
+                self.round = 0
+                self.ui.label_curround.setText('0')
+                self.ui.label_retry.setText('0')
                 self.txtimer.start(0) 
                 self.ui.pushButton_start.setText('停止抄表')
             else:
@@ -183,11 +245,14 @@ class MainWindow(QMainWindow):
         file = QFileDialog.getSaveFileName(self, 'Save file', './result/' + t, 'data file(*.txt)')[0]
         if file:
             with open(file, 'w') as f:
+                f.write('户号\t姓名\t表号\t总电能\t费率1电能\t费率2电能\t费率3电能\t费率4电能\n')
                 for i in range(self.ui.treeWidget.topLevelItemCount()):
-                    data = self.ui.treeWidget.topLevelItem(i).text(1)
-                    if data:
-                        meter = self.ui.treeWidget.topLevelItem(i).text(0)
-                        f.write('%s, %s\n' % (meter, data))
+                    item = self.ui.treeWidget.topLevelItem(i)
+                    colstrs = []
+                    for col in range(8):
+                        colstrs.append(item.text(col))
+                    f.write('\t'.join(colstrs))
+                    f.write('\n')
 
     @pyqtSlot(QTreeWidgetItem, int)
     def on_treeWidget_itemDoubleClicked(self, item, column):

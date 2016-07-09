@@ -4,7 +4,7 @@ from PyQt5.QtWidgets import QApplication
 from mainwindow import MainWindow
 
 
-version = '0.0.2'
+version = '0.1.0'
 
 
 if __name__ == '__main__':    

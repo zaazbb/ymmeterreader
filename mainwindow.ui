@@ -325,29 +325,55 @@
          </item>
          <item>
           <widget class="QLineEdit" name="lineEdit_pkt645">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
            <property name="text">
             <string>68 80 24 59 01 00 14 68 11 04 33 32 34 33 C3 16</string>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="pushButton_save">
+          <widget class="QLabel" name="label_12">
            <property name="text">
-            <string>保存</string>
+            <string>抄表轮次:</string>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QCheckBox" name="checkBox_nodata">
-           <property name="text">
-            <string>只抄没有数据的表</string>
+          <widget class="QSpinBox" name="spinBox_round">
+           <property name="minimum">
+            <number>1</number>
+           </property>
+           <property name="maximum">
+            <number>99</number>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QCheckBox" name="checkBox_selorall">
+          <widget class="QLabel" name="label_13">
            <property name="text">
-            <string>只抄当前选中的表</string>
+            <string>抄通率达到</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QSpinBox" name="spinBox_okrate">
+           <property name="minimum">
+            <number>1</number>
+           </property>
+           <property name="maximum">
+            <number>100</number>
+           </property>
+           <property name="value">
+            <number>90</number>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_14">
+           <property name="text">
+            <string>% 时停止</string>
            </property>
           </widget>
          </item>
@@ -358,6 +384,13 @@
            </property>
           </widget>
          </item>
+         <item>
+          <widget class="QPushButton" name="pushButton_save">
+           <property name="text">
+            <string>保存</string>
+           </property>
+          </widget>
+         </item>
         </layout>
        </item>
       </layout>
@@ -365,12 +398,19 @@
     </item>
     <item>
      <widget class="QTreeWidget" name="treeWidget">
-      <property name="selectionMode">
-       <enum>QAbstractItemView::ExtendedSelection</enum>
-      </property>
       <property name="indentation">
        <number>0</number>
       </property>
+      <column>
+       <property name="text">
+        <string>户号</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>姓名</string>
+       </property>
+      </column>
       <column>
        <property name="text">
         <string>表号</string>
@@ -378,7 +418,32 @@
       </column>
       <column>
        <property name="text">
-        <string>数据</string>
+        <string>总电能</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>费率1电能</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>费率2电能</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>费率3电能</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>费率4电能</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>原始数据</string>
        </property>
       </column>
      </widget>
@@ -388,7 +453,7 @@
       <property name="title">
        <string>状态</string>
       </property>
-      <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="1,0,0,0,0,0">
+      <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="1,0,0,0,0,0,0,0,0,0,0">
        <item>
         <widget class="QProgressBar" name="progressBar">
          <property name="value">
@@ -396,6 +461,41 @@
          </property>
          <property name="format">
           <string>%v/%m</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_15">
+         <property name="text">
+          <string>轮次:</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_curround">
+         <property name="text">
+          <string>0</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_17">
+         <property name="text">
+          <string>抄通率:</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_currate">
+         <property name="text">
+          <string>0</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_currate_2">
+         <property name="text">
+          <string>%</string>
          </property>
         </widget>
        </item>
